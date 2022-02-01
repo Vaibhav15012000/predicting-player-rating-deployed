@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Home Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Predict Player Rating</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type="" name="potential" id="potential" placeholder="potential(75.0-95.0)" step="any">
+            <input type="number" name="heading_accuracy" id="heading_accuracy" placeholder="heading_accuracy(60.0-95.0)"step="any">
+            <input type="number" name="short_passing" id="short_passing" placeholder="short_passing(60.0-95.0)"step="any">
+            <input type="number" name="acceleration" id="acceleration" placeholder="acceleration(60.0-95.0)"step="any">
+            <input type="number" name="reactions" id="reactions" placeholder="reaction(60.0-95.0)"step="any">
+            <input type="number" name="strength" id="strength" placeholder="strength(60.0-95.0)"step="any">
+            <input type="number" name="marking" id="marking"placeholder="marking(60.0-95.0)"step="any">
+            <input type="number" name="gk_diving" id="gk_diving"placeholder="gk_diving(1.0-10.0)"step="any">
+            <input type="number" name="gk_kicking" id="gk_kicking"placeholder="gk_kicking(1.0-15.0)"step="any">
+            
+</select>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+{% endblock %}
